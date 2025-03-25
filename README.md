@@ -12,10 +12,10 @@
         💡
         
         **国内直连**
-        [`https://ghp.xptvhelper.link/https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/AList/xiaoya-tvbox.json`](https://ghp.xptvhelper.link/https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/AList/xiaoya-tvbox.json)
+        [`https://gh-proxy.com/github.com/netcookies/xptv-extensions/blob/main/xiaoya-tvbox.json`](https://gh-proxy.com/github.com/netcookies/xptv-extensions/blob/main/xiaoya-tvbox.json)
         
         **自行代理**(推荐，但订阅前确保可以连接上GitHub
-        [`https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/AList/Xiaoya-tvbox.json`](https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/AList/Xiaoya-tvbox.json)
+        [`https://github.com/netcookies/xptv-extensions/blob/main/xiaoya-tvbox.json`](https://github.com/netcookies/xptv-extensions/blob/main/xiaoya-tvbox.json)
         
         </aside>
         
