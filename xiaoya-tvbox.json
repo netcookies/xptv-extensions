@@ -1,0 +1,10 @@
+{
+    "sites": [
+        {
+            "name": "小雅TvBox",
+            "type": 3,
+            "api": "csp_TvBox",
+            "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/netcookies/xptv-extensions/refs/heads/main/alist_tvbox.js"
+        }
+    ]
+}
