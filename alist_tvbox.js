@@ -81,6 +81,7 @@ async function getCards(ext) {
     ext = argsify(ext)
     let cards = []
     let { url, page = 1 } = ext
+    const { host, token } = getConfigData(); // 获取 host 和 token
 
     if (url === 'undefined') {
         cards = [
@@ -104,12 +105,6 @@ async function getCards(ext) {
             },
         ]
     } else {
-        let host = $cache.get('alist_tvbox_host')
-        // let host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-        if (typeof $config_str !== 'undefined') {
-            host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-        }
-
         let url = ext.url + `&pg=${page}`
         const { data } = await $fetch.get(url, {
             headers: {
@@ -124,7 +119,7 @@ async function getCards(ext) {
                 vod_pic: e.vod_pic,
                 vod_remarks: e.vod_remarks,
                 ext: {
-                    url: `${host}/vod1?ids=${e.vod_id}`,
+                    url: `${host}/vod1${token ? `/${token}` : ''}?ids=${e.vod_id}`,
                 },
             })
         })
@@ -139,11 +134,7 @@ async function getTracks(ext) {
     ext = argsify(ext)
     let tracks = []
     let url = ext.url
-    let host = $cache.get('alist_tvbox_host')
-    // let host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-    if (typeof $config_str !== 'undefined') {
-        host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-    }
+    const { host, token } = getConfigData(); // 获取 host 和 token
 
     const { data } = await $fetch.get(url, {
         headers: {
@@ -161,7 +152,7 @@ async function getTracks(ext) {
                 name: name,
                 pan: '',
                 ext: {
-                    url: `${host}/play?id=${url || name}&from=open`,
+                    url: `${host}/play${token ? `/${token}` : ''}?id=${url || name}&from=open`,
                 },
             })
         })
@@ -232,13 +223,9 @@ async function search(ext) {
         }
     } else {
         const text = encodeURIComponent(ext.text)
-        let host = $cache.get('alist_tvbox_host')
-        // const host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-        if (typeof $config_str !== 'undefined') {
-            host = argsify($config_str)?.url || $cache.get('alist_tvbox_host')
-        }
+        const { host, token } = getConfigData(); // 获取 host 和 token
 
-        const url = `${host}/vod1?wd=${text}`
+        const url = `${host}/vod1${token ? `/${token}` : ''}?wd=${text}`
 
         const { data } = await $fetch.get(url, {
             headers: {
@@ -254,7 +241,7 @@ async function search(ext) {
                 vod_pic: e.vod_pic,
                 vod_remarks: e.vod_remarks,
                 ext: {
-                    url: `${host}/vod1?ids=${id}`,
+                    url: `${host}/vod1${token ? `/${token}` : ''}?ids=${id}`,
                 },
             })
         })
