@@ -4,7 +4,7 @@ let custom = ''
 let token = ''
 
 let appConfig = {
-    ver: 20241009,
+    ver: 20250325,
     title: '小雅tvbox',
 }
 
