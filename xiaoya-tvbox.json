@@ -4,7 +4,7 @@
             "name": "小雅TvBox",
             "type": 3,
             "api": "csp_TvBox",
-            "ext": "https://gh-proxy.com/raw.githubusercontent.com/netcookies/xptv-extensions/refs/heads/main/alist_tvbox.js"
+            "ext": "https://gh-proxy.com/github.com/netcookies/xptv-extensions/blob/main/alist_tvbox.js"
         }
     ]
 }
